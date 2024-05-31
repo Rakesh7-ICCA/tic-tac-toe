@@ -63,11 +63,11 @@ function evalauate(val) {
         if (val != "X") {
           // debugger;
           p2Score.innerText = Number(p2Score.innerText) + 1;
-          showModal(document.querySelector(".player2 #p2").innerText);
+          showModal(document.querySelector(".player2 #p2").innerText+' won this round..!');
           return;
         } else {
           // debugger;
-          showModal(document.querySelector(".player1 #p1").innerText);
+          showModal(document.querySelector(".player1 #p1").innerText+' won this round..!');
           p1Score.innerText = Number(p1Score.innerText) + 1;
           return;
         }
@@ -82,8 +82,7 @@ function evalauate(val) {
       setTimeout(() => {
         // alert("Tie....!");
         wrapperModal.style.display = "block";
-        document.querySelector(".modalBox .info").innerText =
-          "Tie match..!";
+        showModal("Tie match..!");
         reset();
         clickEvent();
         p1 = Array(9).fill(" ");
@@ -102,5 +101,5 @@ function reset() {
 
 function showModal(str) {
   wrapperModal.style.display = "block";
-  document.querySelector(".modalBox .info #name").innerText = str;
+  document.querySelector(".modalBox .info").innerText = str;
 }
